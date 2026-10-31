@@ -1,0 +1,5 @@
+{"timestamp":"2026-10-19T10:34:02Z","host":"edge-01","service":"auth-gateway","level":"WARN","message":"Failed password for user alex from 198.51.100.24"}
+{"timestamp":"2026-10-19T10:34:10Z","host":"edge-01","service":"auth-gateway","level":"WARN","message":"Failed password for user sam from 198.51.100.25"}
+{"timestamp":"2026-10-19T10:34:14Z","host":"edge-01","service":"auth-gateway","level":"WARN","message":"Invalid password for user alex from 198.51.100.26"}
+{"timestamp":"2026-10-19T10:34:18Z","host":"edge-01","service":"auth-gateway","level":"WARN","message":"Authentication failure for user robin from 198.51.100.24"}
+{"timestamp":"2026-10-19T10:34:22Z","host":"edge-01","service":"auth-gateway","level":"WARN","message":"Failed login for user taylor from 198.51.100.27"}

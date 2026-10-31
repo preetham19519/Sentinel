@@ -1,0 +1,2 @@
+{"timestamp":"2026-10-20T10:42:01Z","host":"app-03","service":"payments-worker","level":"ERROR","message":"worker exited unexpectedly; restarting"}
+{"timestamp":"2026-10-20T10:42:02Z","host":"app-03","service":"payments-worker","level":"WARN","message":"service crash detected after version 2.8.1 rollout"}

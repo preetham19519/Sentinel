@@ -1,0 +1,41 @@
+{
+  "evaluation_version": "1",
+  "description": "Expected outputs for the current fixture scenarios; not supplied to the investigator.",
+  "scenarios": [
+    {
+      "path": "scenarios/service-crash/incident.json",
+      "expected": {
+        "hypothesis_statuses": {"oom": "supported", "deployment": "weakened"},
+        "stop_reason": "available_diagnostics_exhausted"
+      }
+    },
+    {
+      "path": "scenarios/service-crash-incomplete/incident.json",
+      "expected": {
+        "hypothesis_statuses": {"oom": "unresolved", "deployment": "unresolved"},
+        "stop_reason": "insufficient_evidence_and_no_diagnostic_available"
+      }
+    },
+    {
+      "path": "scenarios/service-crash-ambiguous/incident.json",
+      "expected": {
+        "hypothesis_statuses": {"oom": "unresolved", "deployment": "unresolved"},
+        "stop_reason": "available_diagnostics_exhausted"
+      }
+    },
+    {
+      "path": "scenarios/service-crash-tool-outage/incident.json",
+      "expected": {
+        "hypothesis_statuses": {"oom": "unresolved", "deployment": "weakened"},
+        "stop_reason": "available_diagnostics_exhausted"
+      }
+    },
+    {
+      "path": "scenarios/database-pool-exhaustion/incident.json",
+      "expected": {
+        "hypothesis_statuses": {"pool_leak": "supported", "traffic_spike": "weakened"},
+        "stop_reason": "available_diagnostics_exhausted"
+      }
+    }
+  ]
+}

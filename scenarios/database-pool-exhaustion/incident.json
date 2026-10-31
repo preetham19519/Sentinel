@@ -1,0 +1,22 @@
+{
+  "scenario_id": "database-pool-exhaustion-investigation-v1",
+  "service": "orders-api",
+  "incident": "orders-api requests are failing during database calls",
+  "logs": "logs.jsonl",
+  "available_tools": ["pool_metrics", "request_volume"],
+  "diagnostics": {
+    "pool_metrics": {
+      "summary": "All 40 connections are checked out, none are idle, and 31 checked-out connections are older than five minutes.",
+      "pool_limit": 40,
+      "active_connections": 40,
+      "idle_connections": 0,
+      "old_connection_count": 31
+    },
+    "request_volume": {
+      "summary": "Request volume stayed within its normal range before and during the incident.",
+      "spike": false,
+      "baseline_rps": 220,
+      "incident_rps": 228
+    }
+  }
+}

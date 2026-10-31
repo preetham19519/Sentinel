@@ -1,0 +1,19 @@
+{
+  "scenario_id": "service-crash-diagnostic-outage-v1",
+  "service": "payments-worker",
+  "incident": "payments-worker crashed; the memory history source is unavailable",
+  "logs": "logs.jsonl",
+  "available_tools": ["memory_history", "deployment_history", "host_events"],
+  "diagnostics": {
+    "deployment_history": {
+      "summary": "No deployment or configuration change occurred in the preceding 24 hours.",
+      "recent_change": false
+    },
+    "host_events": {
+      "summary": "Kernel journal recorded an OOM kill for payments-worker at 10:42.",
+      "oom_kill": true,
+      "event": "oom_kill",
+      "timestamp": "10:42"
+    }
+  }
+}

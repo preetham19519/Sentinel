@@ -1,0 +1,29 @@
+{
+  "scenario_id": "service-crash-memory-vs-deployment-v1",
+  "service": "payments-worker",
+  "incident": "payments-worker crashed and restarted at 10:42",
+  "logs": "logs.jsonl",
+  "available_tools": ["memory_history", "deployment_history", "host_events"],
+  "diagnostics": {
+    "memory_history": {
+      "summary": "Memory rose from 48% to 96% in the ten minutes before the crash.",
+      "unit": "percent",
+      "samples": [
+        {"timestamp": "10:32", "value": 48},
+        {"timestamp": "10:36", "value": 63},
+        {"timestamp": "10:39", "value": 81},
+        {"timestamp": "10:41", "value": 96}
+      ]
+    },
+    "deployment_history": {
+      "summary": "No deployment or configuration change occurred in the preceding 24 hours.",
+      "recent_change": false
+    },
+    "host_events": {
+      "summary": "Kernel journal recorded an OOM kill for payments-worker at 10:42.",
+      "oom_kill": true,
+      "event": "oom_kill",
+      "timestamp": "10:42"
+    }
+  }
+}

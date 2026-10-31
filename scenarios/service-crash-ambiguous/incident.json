@@ -1,0 +1,29 @@
+{
+  "scenario_id": "service-crash-ambiguous-evidence-v1",
+  "service": "payments-worker",
+  "incident": "payments-worker crashed after both a memory increase and a recent deployment",
+  "logs": "logs.jsonl",
+  "available_tools": ["memory_history", "deployment_history", "host_events"],
+  "diagnostics": {
+    "memory_history": {
+      "summary": "Memory rose from 52% to 91% before the crash, but did not reach the configured 95% limit.",
+      "unit": "percent",
+      "samples": [
+        {"timestamp": "10:20", "value": 52},
+        {"timestamp": "10:30", "value": 67},
+        {"timestamp": "10:38", "value": 91}
+      ]
+    },
+    "deployment_history": {
+      "summary": "Version 2.8.1 was deployed 12 minutes before the crash; the change modified request batching.",
+      "recent_change": true,
+      "version": "2.8.1",
+      "change": "request batching"
+    },
+    "host_events": {
+      "summary": "No operating-system OOM kill was recorded for the host during the incident window.",
+      "oom_kill": false,
+      "timestamp": "10:40-10:45"
+    }
+  }
+}

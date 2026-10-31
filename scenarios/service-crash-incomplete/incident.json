@@ -1,0 +1,8 @@
+{
+  "scenario_id": "service-crash-incomplete-evidence-v1",
+  "service": "payments-worker",
+  "incident": "payments-worker crashed and restarted at 10:42; diagnostic history is unavailable",
+  "logs": "logs.jsonl",
+  "available_tools": [],
+  "diagnostics": {}
+}
